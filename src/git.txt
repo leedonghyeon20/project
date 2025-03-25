@@ -1,0 +1,109 @@
+- 소스 버전 관리
+리누스 (운영체제) 창시자 리누스 토발즈가 개발
+git 설치 : 사용자 설정
+git config --global user.name "이름"
+git config --global user.email "이메일주소"
+
+git 명령어
+1) git config --list : config 설정 확인
+2) git init
+3) git status
+4) gid add 파일명
+5) git commit -m "hello.txt 파일 생성"
+6) git log --graph
+7) 
+8) git commit --amend : 직전커밋을 취소시킴
+
+버전관리도구 - git, svn(sebversion)
+
+get 동작방식
+- 시간순으로 프로젝트의 스냅샷 저장 : commit
+            - 달리진 부분만 저장
+- git 영역
+ 1) working 디렉터리 (현재작업폴더) : git init 명령이 수행된 디렉터리
+       새파일 작성(Untracked file)  
+	- 버전관리 원한다면 stagig 영역으로 보내야 함
+ 2) staging (한 번 끌어올린 상태)
+       git commit -m "hello.txt 파일생성" : 로컬저장소에 저장
+ 3) repository (최종저장상태)
+
+-- git 파일 상태
+1) Untracked
+2) Unmodified
+3) modiried
+     1) git add 파일명
+     2) git restore 파일명
+
+     3) git commit -a -m "커밋메세지" : add + commit 동시에 처리
+
+4) staged
+     New file
+     1) git rm --cached 파일명 : Untracked 상황
+     2) git restore --staged 파일명 : Untracked 상황
+
+.gitignore : git에서 관리 대상이 아닌 파일 작성
+프로젝트 초반에 하기
+	- 기존에 관리 대상이었던 파일을 나중에 .gitignore 추가 시
+	관리대상에서 제외해 주지않음
+	git rm --cached 파일명
+	git commit -m "메세지" (제외한 파일에 대한 커밋 남기기)
+
+git diff : modified 인 파일과 로컬저장소에 있는 파일과 비교
+git diff --staged : staged 인 파일과 로컬저장소에 있는 파일과 비교
+
+git revert : 커밋 취소, 최소에 대한 커밋 남기기
+커밋취소 : 커밋과 연결된 작업 제거된다는 걸 의미
+
+git reset --soft : 파일 수정 내용은 남고 커밋만 제거
+git reset --hard : 파일 수정 내용 제거되고 커밋도 제거
+git reset --mixed : 파일 수정 내용은 남고 커밋 제거되고, 파일이 
+		unstaged 영역까지 내려감
+
+git branch
+ 기본 브랜치명 : 예전에는 master 주로 사용
+		현재는 main 사용
+
+git branch -m master main : 브랜치명 변경(master => main)
+
+main브랜치는 놔두고 새로운 브랜치에서 특정작성수행
+브랜치별로 관리가능
+main브랜치 + 새로운 브랜치 작업 merge 가능
+팀작업
+ 
+git branch 브랜치명 : 브랜치 생성
+git branch : 브랜치 확인
+git checkout 브랜치명 : 브랜치 이동
+- 가장 처음에 수행될 때는 main 브랜치 내용 복사 + 이동
+- 두번쨰 부터는 이동
+
+git merge 브랜치명(합칠 브랜치명)
+
+원격(remote)저장소
+ - github, gitlab
+
+ - github 리포지토리 생성
+ - 원격저장소와 로컬저장소 연동
+git remote add origin https://github.com/leedonghyeon20/test.git
+
+git remote -v : 로컬에서 원격저장소 확인
+
+git push -u origin main : main commit 을 원격저장소와 동기화
+git fetch 원격저장소명 : 원격저장소와 main을 동기화
+git merge origin : 원격저장소와 main을 동기화
+
+git pull : fetch + merge 한 번에 처리
+
+
+clone : 복제
+본인 , 타인 작성 복제 가능 
+
+
+프로젝트 협업 
+-패키지명, 변수, 
+pull -> push
+
+1. 로컬 커밋
+2. push(github 동기화)
+
+
+
