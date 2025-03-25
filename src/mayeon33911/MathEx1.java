@@ -13,5 +13,6 @@ public class MathEx1 {
 
         System.out.println("min(x,y) : " + Math.min(val, val2));
         System.out.println("max(x,y) : " + Math.max(val, val2));
+        // 아주 훌륭합니다
     }
 }
