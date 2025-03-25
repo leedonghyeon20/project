@@ -23,5 +23,20 @@ public class Ex_for {
         System.out.printf("짝수의 합은 : %d\n", oddSum);
         System.out.printf("홀수의 합은 : %d\n", evenSum);
         System.out.println("--------------------");
+
+        // 구구단 세로로 출력
+        for (int i = 2; i < 10; i++) {
+            for (int j = 1; j < 10; j++) {
+                System.out.println(i + " * " + j + " = " + i * j);
+            }
+        }
+
+        // 가로로 출력
+        for (int i = 2; i < 10; i++) {
+            System.out.println("");
+            for (int j = 1; j < 10; j++) {
+                System.out.printf("%d * %d = %d\t", i, j, i * j);
+            }
+        }
     }
 }
